@@ -1,0 +1,114 @@
+<section
+  class="relative w-full md:min-h-svh ms:min-h-3.5 flex flex-col video-section"
+>
+  <div class=" w-full bg-white absolute-container">
+    <video
+      [autoplay]="true"
+      playsinline
+      [muted]="true"
+      [loop]="true"
+      preload="auto"
+    >
+      <source
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/ocean-small.webm"
+        type="video/webm"
+      />
+      <source
+        src="http://thenewcode.com/assets/videos/ocean-small.mp4"
+        type="video/mp4"
+      />
+    </video>
+
+    <svg viewBox="0 0 285 80" preserveAspectRatio="xMidYMid">
+      <defs>
+        <mask id="mask" x="0" y="0" width="100%" height="100%">
+          <rect x="0" y="0" width="100%" height="100%" fill="fill-teal-600" />
+          <text #textHead x="50%" y="50%" dy=".35em">about me</text>
+        </mask>
+      </defs>
+
+      <rect x="0" y="0" width="100%" height="100%" />
+    </svg>
+  </div>
+</section>
+<section class="section-text">
+  <div
+    class="px-10 bg-white text-cyan-800 md:text-2xl sm:text-sm max-w-5xl mx-auto"
+  >
+    <p class="" #para>
+      I’m a freelance full-stack developer with a solid background in software
+      engineering. <br />
+      I graduated from the Arab Open University (AOU) and have completed three
+      internships — two focused on learning Spring Boot, and the third was an
+      intensive code camp at ME(R/A)N stack internship at ITI. As part of the
+      final internship, my team and I built a Learning Management System (LMS),
+      a Udemy-style platform.
+    </p>
+    <p class="pt-5" #para>
+      I create fast, clean, and maintainable web applications that scale from a
+      handful of users to thousands. With a strong foundation in computer
+      science and experience across both front-end and back-end development, I
+      can build everything from small business websites to complex, custom web
+      apps.
+    </p>
+
+    <p class="pt-5 text-cyan-900" #para>
+      I offer my services as a full-stack developer for hire and work with
+      businesses of all sizes. Feel free to get in touch — I’m available during
+      the week to discuss your project or provide technical guidance.
+    </p>
+  </div>
+
+  <div class="flex flex-col gap-7 justify-center items-center py-11 mx-auto">
+    <div #para
+      class="flex items-center  border text-cyan-900  p-2 rounded shadow-xl md: w-fit"
+    >
+      <button
+        class=" "
+        aria-label="Copy Email"
+        [cdkCopyToClipboard]="email()"
+        (cdkCopyToClipboardCopied)="copyEmailAction()"
+      >
+        <span class="px-5 "><i class="fa-solid fa-paper-plane"></i></span>
+        <span class="text-xs md:text-2xl flex-1 text-ellipsis whitespace-nowrap overflow-hidden">
+          <span class="hidden sm:inline">{{'mohamed.ahmed.mohran@gmail.com'}}</span>
+          <span class="sm:hidden">{{'mohamed...@gmail.com'}}</span> <!-- fallback for very small screens -->
+        </span>
+        <span class="hover:text-cyan-700 px-5 ">
+          @if(!copyEmail()){
+          <i class="fas fa-copy"></i>
+          } @else {
+          <i class="fa-solid fa-check"></i>
+          }
+        </span>
+      </button>
+    </div>
+
+    <div #para
+      class="flex items-center gap-2 border text-cyan-900 p-2 rounded shadow-xl w-fit"
+    >
+      <button
+        class=" "
+        aria-label="Copy Email"
+        [cdkCopyToClipboard]="phone()"
+        (cdkCopyToClipboardCopied)="copyPhoneAction()"
+      >
+        <span class="px-5"><i class="fa-solid fa-phone"></i></span>
+        <span class="md:text-2xl sm:text-lg select-text ">+201098187312</span>
+        <span class="hover:text-cyan-700 px-5">
+          @if(!copyPhone()){
+          <i class="fas fa-copy"></i>
+          } @else {
+          <i class="fa-solid fa-check"></i>
+          }
+        </span>
+      </button>
+    </div>
+
+  </div>
+
+  <div>
+    <h3 #para class="text-4xl font-bold text-center text-cyan-950"> What is a full stack developer ?</h3>
+    <p #para class= "text-cyan-800 md:text-2xl sm:text-sm max-w-5xl px-10 pt-10 pb-16 mx-auto">A full stack developer has the functional knowledge and ability to take a concept and turn it into a finished product. A full stack developer should have knowledge in front end and back end development. Front end developers build the visible parts of applications that users see and interact with. Back end developers on the other hand, are responsible for building the parts the user does not see, which include core computational logic, server and database.</p>
+  </div>
+</section>
