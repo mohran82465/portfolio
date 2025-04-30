@@ -4,15 +4,13 @@
   <div class="flex justify-between items-center px-6 py-2">
     <!-- Logo -->
     <div>
-      <a
-        class="text-base sm:text-3xl  font-extrabold logo text-white"
-      >
+      <a class="text-base sm:text-3xl font-extrabold logo text-white">
         mohamed mohran
       </a>
     </div>
 
     <!-- Drawer for Mobile -->
-    <div class=" drawer-end">
+    <div class="drawer-end">
       <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content">
         <!-- Button to open drawer -->
@@ -34,16 +32,33 @@
 
           <!-- Menu Items -->
           <div>
-            <ul class="menu p-5 pt-20 space-y-4 text-lg flex flex-col items-center">
+            <ul
+              class="menu p-5 pt-20 space-y-4 text-lg flex flex-col items-center"
+            >
               <li class="w-full">
-                <a class="block w-full text-center hover:bg-zinc-800 rounded-lg py-2">Home</a>
+                <a
+                  routerLink="/home"
+                  routerLinkActive="router-link-active"
+                  class="block w-full text-center hover:bg-zinc-800 rounded-lg py-2"
+                  >Home</a
+                >
               </li>
               <li class="w-full">
-                <a class="block w-full text-center hover:bg-zinc-800 rounded-lg py-2">About</a>
+                <a
+                  routerLink="/portfolio"
+                  class="block w-full text-center hover:bg-zinc-800 rounded-lg py-2"
+                  >Portfolio</a
+                >
+              </li>
+              <li class="w-full">
+                <a
+                  routerLink="/contact"
+                  class="block w-full text-center hover:bg-zinc-800 rounded-lg py-2"
+                  >Contact</a
+                >
               </li>
             </ul>
           </div>
-          
         </div>
       </div>
     </div>
