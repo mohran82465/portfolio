@@ -8,54 +8,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
   styleUrls: ['./works.component.scss'],
   imports: []
 })
-export class WorksComponent implements AfterViewInit {
-  @ViewChild('chevron') chevronContainer!: ElementRef;
+export class WorksComponent  {
 
-  ngAfterViewInit() {
-    gsap.registerPlugin(ScrollTrigger);
+   list = [
+    {
+      name: 'Azkary',
+      img: 'azkary.png',
+      link : 'https://azkary.vercel.app/praytime', 
+      desc:"Azkary is a simple web application that displays daily prayer times. It integrates multiple APIs to enhance accuracy and user experience. The app retrieves the user's public IP address to determine their approximate location and time zone, then uses this information to fetch precise prayer times from a dedicated prayer time API."
+    }
+    
+  ]
 
-    gsap.fromTo(
-      this.chevronContainer.nativeElement.querySelectorAll('i'),
-      {
-        y: 0,
-        opacity: 0.5,
-      },
-      {
-        y: 15,
-        opacity: 1,
-        duration: 0.8,
-        ease: 'power1.inOut',
-        stagger: 0.3,
-        repeat: -1,
-        yoyo: true,
-      }
-    );
-
-
-    const cards = gsap.utils.toArray<HTMLElement>('.card');
-   
-  cards.forEach((card) => {
-    gsap.fromTo(
-      card,
-      {
-        opacity: 0,
-        y: 50, // ⬇️ from bottom
-      },
-      {
-        opacity: 1,
-        y: 0, // ⬆️ to original position
-        duration: 1,
-        ease: 'power4.out',
-        scrollTrigger: {
-          scrub:true,
-          trigger: card,
-          start: 'top 80%',
-          toggleActions: 'play none none reverse',
-          markers: false,
-        },
-      }
-    );
-  });
-
-  }
 }
