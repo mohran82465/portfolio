@@ -3,6 +3,8 @@ import { AboutComponent } from "../about/about.component";
 import { ExperienceAndEductionComponent } from "../experience-and-eduction/experience-and-eduction.component";
 import { RouterModule } from '@angular/router';
 import gsap from 'gsap';
+import { Meta, Title } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-cover',
@@ -12,6 +14,14 @@ import gsap from 'gsap';
 })
 export class CoverComponent implements AfterViewInit  {
 
+  constructor(private meta: Meta, private title: Title) {
+    this.title.setTitle('mohamed mohran portfolio');
+    this.meta.updateTag({ name: 'description', content: 'Hi, i am mohamed mohran a full-stack developer portfolio showcasing Angular, TypeScript, React ,Java, and more.' });
+  
+    this.meta.updateTag({ property: 'og:title', content: 'Mohamed Mohran – Portfolio' });
+    this.meta.updateTag({ property: 'og:description', content: 'Hi, i am mohamed mohran a full-stack developer portfolio showcasing Angular, TypeScript, React ,Java, and more.' });
+    this.meta.updateTag({ property: 'og:image', content: 'https://mohamedmohran.vercel.app/mohran.png' });
+  }
 
   isMenuOpen = signal(false);
   isParentMenuOpen = signal(false);
