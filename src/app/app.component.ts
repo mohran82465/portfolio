@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
-import { CoverComponent } from "./cover/cover.component";
-import { ContactComponent } from "./contact/contact.component";
+import { NavigationEnd, Router, RouterModule, RouterOutlet } from '@angular/router';
 import { FooterComponent } from "./footer/footer.component";
 import { HeaderComponent } from "./header/header.component";
-import { WorksComponent } from "./works/works.component";
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -14,4 +12,11 @@ import { WorksComponent } from "./works/works.component";
 })
 export class AppComponent {
   title = 'portfolio';
+  constructor(private router: Router) {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // 👈 always scroll to top
+      });
+  }
 }
