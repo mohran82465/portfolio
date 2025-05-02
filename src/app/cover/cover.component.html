@@ -5,39 +5,48 @@
 >
   <div class="mx-auto">
     <div
-    #avatar
-    class="mx-auto mb-[40px] mt-[98px] h-[213px] w-[213px] overflow-hidden rounded-full bg-gradient-to-tr from-[#FF8660] to-[#8000FF]"
-  >
-    <img src="mohran.jpg"  width="300" height="150"  alt="mohamed mohran" priority />
-  </div>
-  
-  <h1
-    #heading
-    class="max-w-screen-sm text-center text-[55px] font-extrabold text-white"
-  >
-    I do code and <br />
-    have
-    <span
-      class="text-transparent bg-clip-text bg-gradient-to-tr from-[#FF8660] to-[#8000FF]"
-      >fun with it!</span
+      #avatar
+      class="mx-auto mb-[40px] mt-[98px] h-[213px] w-[213px] overflow-hidden rounded-full bg-gradient-to-tr from-[#FF8660] to-[#8000FF]"
     >
-  </h1>
+      <img
+        src="mohran.jpg"
+        width="300"
+        height="150"
+        alt="mohamed mohran"
+        priority
+      />
+    </div>
+
+    <h1
+      #heading
+      class="max-w-screen-sm text-center text-[55px] font-extrabold text-white"
+    >
+      I do code and <br />
+      have
+      <span
+        class="text-transparent bg-clip-text bg-gradient-to-tr from-[#FF8660] to-[#8000FF]"
+        
+        >fun with it!</span
+      >
+    </h1>
     <p
       class="mx-auto mt-[40px] mb-[54px] text-[18px] font-light text-white text-center max-w-lg"
     >
       I am a seasoned full-stack software engineer with over 2 years of
       professional experience, specializing in front development.
     </p>
-    <div class="text-center m-4">
+    <div
+      class="flex flex-col items-center gap-4 m-4 sm:flex-row sm:justify-center sm:gap-6"
+    >
       <button
         routerLink="/contact"
-        class="text-gray-800 self-center inline-block px-[30px] py-[16px] mr-[18px] bg-white rounded-full font-semibold text-[22px] mb-4"
+        class="text-gray-800 px-[30px] py-[16px] bg-white rounded-full font-semibold text-[22px]"
       >
         Get In Touch
       </button>
-      <!-- <div ></div> -->
-      <button
-        class="text-white inline-block px-[30px] py-[16px] bg-transparent border-2 rounded-full font-semibold text-[22px]"
+
+      <button (click)="downloadPdf()"
+        class="text-white px-[30px] py-[16px] bg-transparent border-2 rounded-full font-semibold text-[22px]"
       >
         Download CV
       </button>

@@ -52,5 +52,12 @@ export class CoverComponent implements AfterViewInit  {
   toggleParentMenu() {
     this.isParentMenuOpen.update((prev) => !prev);
   }
+  downloadPdf() {
+    const link = document.createElement('a');
+    link.href = '/mohamed mohran angular cv.pdf'; 
+    link.download = 'mohamed mohran angular cv.pdf';
+    link.click();
+  }
+  
 }
 
