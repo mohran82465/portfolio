@@ -79,15 +79,15 @@ svg {
 }
 
 // Optional: Tweak on smaller screens if needed
-@media screen and (max-width: 770px)  {
+@media screen and (max-width: 899px) and (min-width: 700px) {
   svg {
-    font-size: 9vw;
-    top:-42%; 
+    font-size: 5vw; // Reduced from 9vw
+    top: -38%; // Better vertical positioning
   }
+  
   video {
-    width: 83%;
-    height: 97%;
-    transform: translate(-50%,-95%);
+    width: 75%; // Better width for mid-range
+    transform: translate(-50%, -107%); // Better vertical alignment
   }
 }
 @media screen and (max-width: 699px) {
@@ -105,7 +105,7 @@ svg {
 }
 @media screen and (max-width: 500px) {
   svg {
-    font-size: 9vw;
+    font-size: 8vw;
     top:-42%; 
   }
   video {
