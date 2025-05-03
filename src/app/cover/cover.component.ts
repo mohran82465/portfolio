@@ -4,25 +4,26 @@ import { ExperienceAndEductionComponent } from "../experience-and-eduction/exper
 import { RouterModule } from '@angular/router';
 import gsap from 'gsap';
 import { Meta, Title } from '@angular/platform-browser';
+import { DownloadService } from '../download.service';
 
 
 @Component({
   selector: 'app-cover',
-  imports: [AboutComponent, ExperienceAndEductionComponent,RouterModule],
+  imports: [AboutComponent, ExperienceAndEductionComponent, RouterModule],
   templateUrl: './cover.component.html',
   styleUrl: './cover.component.scss'
 })
-export class CoverComponent implements AfterViewInit  {
+export class CoverComponent implements AfterViewInit {
 
-  constructor(private meta: Meta, private title: Title) {
+  constructor(private meta: Meta, private title: Title, public downloadService:DownloadService) {
     this.title.setTitle('mohamed mohran portfolio');
     this.meta.updateTag({ name: 'description', content: 'Hi, i am mohamed mohran a full-stack developer portfolio showcasing Angular, TypeScript, React ,Java, and more.' });
-  
+
     this.meta.updateTag({ property: 'og:title', content: 'Mohamed Mohran – Portfolio' });
     this.meta.updateTag({ property: 'og:description', content: 'Hi, i am mohamed mohran a full-stack developer portfolio showcasing Angular, TypeScript, React ,Java, and more.' });
     this.meta.updateTag({ property: 'og:image', content: 'https://mohamedmohran.vercel.app/mohran.png' });
   }
-
+  cvPath:string = 'mohamed-mohran-cv.pdf'; 
   isMenuOpen = signal(false);
   isParentMenuOpen = signal(false);
 
@@ -43,8 +44,8 @@ export class CoverComponent implements AfterViewInit  {
       delay: 0.5
     });
   }
-  
-  
+
+
   toggleMenu() {
     this.isMenuOpen.update((prev) => !prev);
   }
@@ -54,10 +55,14 @@ export class CoverComponent implements AfterViewInit  {
   }
   downloadPdf() {
     const link = document.createElement('a');
-    link.href = '/mohamed mohran angular cv.pdf'; 
-    link.download = 'mohamed mohran angular cv.pdf';
+    link.href = '/assets/mohamed-mohran-cv.pdf'; // Ensure this is the correct path
+    link.setAttribute('download', 'mohamed-mohran-cv.pdf');
+    document.body.appendChild(link);  // Append to the DOM (required in some browsers)
     link.click();
+    document.body.removeChild(link);  // Clean up the DOM
   }
   
+  
+
 }
 
