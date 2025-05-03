@@ -4,7 +4,6 @@ import { ExperienceAndEductionComponent } from "../experience-and-eduction/exper
 import { RouterModule } from '@angular/router';
 import gsap from 'gsap';
 import { Meta, Title } from '@angular/platform-browser';
-import { DownloadService } from '../download.service';
 
 
 @Component({
@@ -15,7 +14,7 @@ import { DownloadService } from '../download.service';
 })
 export class CoverComponent implements AfterViewInit {
 
-  constructor(private meta: Meta, private title: Title, public downloadService:DownloadService) {
+  constructor(private meta: Meta, private title: Title,) {
     this.title.setTitle('mohamed mohran portfolio');
     this.meta.updateTag({ name: 'description', content: 'Hi, i am mohamed mohran a full-stack developer portfolio showcasing Angular, TypeScript, React ,Java, and more.' });
 
