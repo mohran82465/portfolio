@@ -81,7 +81,7 @@ svg {
 // Optional: Tweak on smaller screens if needed
 @media screen and (max-width: 899px) and (min-width: 700px) {
   svg {
-    font-size: 5vw; // Reduced from 9vw
+    font-size: 3vw; // Reduced from 9vw
     top: -38%; // Better vertical positioning
   }
   
@@ -105,7 +105,7 @@ svg {
 }
 @media screen and (max-width: 500px) {
   svg {
-    font-size: 8vw;
+    font-size: 6vw;
     top:-42%; 
   }
   video {
