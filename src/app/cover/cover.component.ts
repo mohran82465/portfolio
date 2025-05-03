@@ -14,7 +14,7 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class CoverComponent implements AfterViewInit {
 
-  constructor(private meta: Meta, private title: Title,) {
+  constructor(private meta: Meta, private title: Title) {
     this.title.setTitle('mohamed mohran portfolio');
     this.meta.updateTag({ name: 'description', content: 'Hi, i am mohamed mohran a full-stack developer portfolio showcasing Angular, TypeScript, React ,Java, and more.' });
 
